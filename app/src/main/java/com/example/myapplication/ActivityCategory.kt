@@ -28,7 +28,7 @@ class ActivityCategory : AppCompatActivity() {
         val topicsWithCards = db.topicDao().getTopicWithCards(activeTopic.categoryId)
         val activeTopicId = topics.indexOf(activeTopic)
 
-        setupViewPager(db, viewPager, topicsWithCards, activeTopicId)
+        setupViewPager(viewPager, topicsWithCards, activeTopicId)
 
         val btnAdd = findViewById<Button>(R.id.btnAddCard)
         btnAdd.setOnClickListener {
@@ -40,11 +40,7 @@ class ActivityCategory : AppCompatActivity() {
         }
     }
 
-    private fun setupViewPager(db: AppDatabase, viewPager: ViewPager2, topicsWithCards: List<TopicsWithCards>, activeTopicId: Int) {
-
-
-
-
+    private fun setupViewPager(viewPager: ViewPager2, topicsWithCards: List<TopicsWithCards>, activeTopicId: Int) {
         viewPager.adapter = TopicPagerAdapter(supportFragmentManager, lifecycle, topicsWithCards)
         viewPager.currentItem = activeTopicId
         viewPager.offscreenPageLimit = 1

@@ -7,48 +7,26 @@
     android:layout_marginHorizontal="16dp"
     tools:context=".ActivityAddCard">
 
-    <Spinner
-        android:id="@+id/spinnerCategory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
 
-    <Spinner
-        android:id="@+id/spinnerTopic"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/tvCard"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTopic" />
+        android:text="Card"
+        app:layout_constraintTop_toBottomOf="@id/actvTopic"
+        />
 
     <EditText
         android:id="@+id/etContent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Card content"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etTitle" />
-
-    <TextView
-        android:id="@+id/tvCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Category"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvTopic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Topic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCategory" />
 
     <Button
         android:id="@+id/btnAddCard"
@@ -61,19 +39,32 @@
 
     <EditText
         android:id="@+id/etTitle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCard" />
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+    <AutoCompleteTextView
+        android:id="@+id/actvCategory"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:layout_marginTop="48dp"
+        android:hint="Category"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTopic" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/actvTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Topic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actvCategory" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
